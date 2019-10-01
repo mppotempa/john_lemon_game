@@ -62,7 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\dummy.cs" />
+    <Compile Include="Assets\Scripts\LightFlicker.cs" />
+    <Compile Include="Assets\Scripts\Outliner.cs" />
+    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <None Include="Assets\Shaders\SpookyStandardShader.shader" />
+    <None Include="Assets\Shaders\PlaneFog.shader" />
+    <None Include="Assets\Shaders\ToonShader.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/mappotem/Documents/potempa_johnlemon/Potempa_JohnLemon/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
