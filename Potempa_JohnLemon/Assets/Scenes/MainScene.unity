@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18387014, g: 0.22901618, b: 0.30311254, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -187,6 +187,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1949169690722727453, guid: 549c69af39b84624b8a053537c407def,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 2.75508e-40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949169690722727453, guid: 549c69af39b84624b8a053537c407def,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: -1.14e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949169690722727453, guid: 549c69af39b84624b8a053537c407def,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -1.49e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205683311567474132, guid: 549c69af39b84624b8a053537c407def,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -4.0586423e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205683311567474132, guid: 549c69af39b84624b8a053537c407def,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 7.03e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205683311567474132, guid: 549c69af39b84624b8a053537c407def,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -4.0586423e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6913876409126090272, guid: 549c69af39b84624b8a053537c407def,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -4.0586423e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6913876409126090272, guid: 549c69af39b84624b8a053537c407def,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 7.03e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6913876409126090272, guid: 549c69af39b84624b8a053537c407def,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -4.0586423e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783876597721242196, guid: 549c69af39b84624b8a053537c407def,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 4.5904e-41
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549c69af39b84624b8a053537c407def, type: 3}
 --- !u!1 &705507993
@@ -216,19 +266,19 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.88235295, g: 0.9411765, b: 0.98039216, a: 1}
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
-    m_Resolution: -1
+    m_Resolution: 3
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Bias: 0.01
+    m_NormalBias: 0.01
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -262,7 +312,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 4.5904e-41, y: 0, z: 7.5730854e-28, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -273,13 +323,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.25488704, y: 0.16773126, z: -0.044943456, w: 0.95125127}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 20, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,17 +428,17 @@ PrefabInstance:
     - target: {fileID: 8843886180661748109, guid: ab6792477eb90d543baeeb21a49de4d1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8239527
+      value: -9.8
       objectReference: {fileID: 0}
     - target: {fileID: 8843886180661748109, guid: ab6792477eb90d543baeeb21a49de4d1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49295855
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8843886180661748109, guid: ab6792477eb90d543baeeb21a49de4d1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.8130653
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 8843886180661748109, guid: ab6792477eb90d543baeeb21a49de4d1,
         type: 3}
