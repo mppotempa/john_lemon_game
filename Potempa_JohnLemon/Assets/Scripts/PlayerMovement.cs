@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Vector3 m_Movement;
+    Animator m_Animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_Animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,6 +21,11 @@ public class PlayerMovement : MonoBehaviour
 
         m_Movement.Set(horizontal, 0f, vertical);
         m_Movement.Normalize();
+
+        bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
+        bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
+        bool isWalking = hasHorizontalInput || hasVerticalInput;
+        m_Animator.SetBool("IsWalking", isWalking);
 
     }
 }
