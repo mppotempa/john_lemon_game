@@ -5856,7 +5856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1993096778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5901,7 +5901,7 @@ GameObject:
   - component: {fileID: 1995809624}
   - component: {fileID: 1995809623}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: SoulBit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5915,7 +5915,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995809622}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -5973,8 +5973,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995809622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.787, y: 0.789, z: -2.469}
-  m_LocalScale: {x: 0.15791, y: 0.15791, z: 0.15791}
+  m_LocalPosition: {x: -1.245, y: 0.789, z: 18.867}
+  m_LocalScale: {x: 0.07942084, y: 0.07942084, z: 0.07942084}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
