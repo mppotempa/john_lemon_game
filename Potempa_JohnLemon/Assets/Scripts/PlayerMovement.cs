@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
-    private int soulsLeft = 2;
+    private int soulsLeft = 13;
     public Text leftText;
     public GameObject ending;
     Vector3 m_Movement;
@@ -81,11 +81,37 @@ public class PlayerMovement : MonoBehaviour
             other.gameObject.SetActive(false);
             soulsLeft--;
             setLeftText();
+            //check to see what to activate
             if(soulsLeft == 0)
             {
                 //activate the end of the game
                 ending.SetActive(true);
-}
+                gargoyle3.SetActive(true);
+            }
+            else if (soulsLeft == 1)
+            {
+                gargoyle1.SetActive(true);
+            }
+            else if (soulsLeft == 3)
+            {
+                ghost2.SetActive(true);
+            }
+            else if (soulsLeft == 5)
+            {
+                gargoyle2.SetActive(true);
+            }
+            else if (soulsLeft == 7)
+            {
+                ghost4.SetActive(true);
+            }
+            else if (soulsLeft == 9)
+            {
+                ghost3.SetActive(true);
+            }
+            else if (soulsLeft == 11)
+            {
+                ghost1.SetActive(true);
+            }
         }
 
     }
