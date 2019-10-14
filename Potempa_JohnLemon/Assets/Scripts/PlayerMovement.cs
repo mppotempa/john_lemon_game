@@ -16,6 +16,16 @@ public class PlayerMovement : MonoBehaviour
     AudioSource m_AudioSource;
     Quaternion m_Rotation = Quaternion.identity;
 
+    //all variables for enemies
+    public GameObject gargoyle1;
+    public GameObject gargoyle2;
+    public GameObject gargoyle3;
+    public GameObject ghost1;
+    public GameObject ghost2;
+    public GameObject ghost3;
+    public GameObject ghost4;
+
+
     // Start is called before the first frame update
     void Start()
     {
