@@ -72,6 +72,7 @@
     <Compile Include="Assets\testv2.cs" />
     <Compile Include="Assets\testv4.cs" />
     <Compile Include="Assets\testv5.cs" />
+    <Compile Include="Assets\testv6.cs" />
     <Compile Include="Assets\textv3.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <None Include="Assets\Shaders\SpookyStandardShader.shader" />
