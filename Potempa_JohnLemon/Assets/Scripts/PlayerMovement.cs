@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
+    private int soulsLeft = 2;
+    public Text leftText;
+    public GameObject ending;
     Vector3 m_Movement;
     Animator m_Animator;
     Rigidbody m_Rigidbody;
@@ -17,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_AudioSource = GetComponent<AudioSource>();
+        setLeftText();
     }
 
     // Update is called once per frame
@@ -32,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         m_Animator.SetBool("IsWalking", isWalking);
+
         if (isWalking)
         {
             if (!m_AudioSource.isPlaying)
@@ -53,6 +60,36 @@ public class PlayerMovement : MonoBehaviour
     {
         m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
         m_Rigidbody.MoveRotation(m_Rotation);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //if Lemon runs into a soul
+        if (other.gameObject.CompareTag("Soul"))
+        {
+            //hide the soul bit
+            other.gameObject.SetActive(false);
+            soulsLeft--;
+            setLeftText();
+            if(soulsLeft == 0)
+            {
+                //activate the end of the game
+                ending.SetActive(true);
+}
+        }
+
+    }
+
+    void setLeftText()
+    {
+        if(soulsLeft > 0)
+        {
+            leftText.text = "Souls left: " + soulsLeft.ToString();
+        }
+        else
+        {
+            leftText.text = "Make it back to the starting point to escape!";
+        }
     }
 }
 
