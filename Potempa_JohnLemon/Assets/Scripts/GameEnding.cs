@@ -61,7 +61,14 @@ public class GameEnding : MonoBehaviour
             }
 
             //output time
-            timeText.text = hour.ToString() + ":" + minString + ampm;
+            if (hour == 7)
+            {
+                CaughtPlayer();
+            }
+            else
+            {
+                timeText.text = hour.ToString() + ":" + minString + ampm;
+            }
         }
     }
 
