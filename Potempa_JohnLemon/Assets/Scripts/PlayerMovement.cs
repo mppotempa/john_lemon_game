@@ -9,7 +9,11 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed = 20f;
     private int soulsLeft = 13;
     public Text leftText;
-    public GameObject ending;
+    public GameObject exit;
+    public Text timeText;
+
+    float m_TimePassed;
+
     Vector3 m_Movement;
     Animator m_Animator;
     Rigidbody m_Rigidbody;
@@ -24,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject ghost2;
     public GameObject ghost3;
     public GameObject ghost4;
+    
+    //call another script
+    GameEnding gameEnding;
 
 
     // Start is called before the first frame update
@@ -66,6 +73,45 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        //display time
+        m_TimePassed += Time.deltaTime;
+
+        //min
+        int min = Mathf.FloorToInt(m_TimePassed % 60f);
+        string minString = min.ToString();
+        if (min < 10)
+        {
+            minString = "0" + minString;
+
+        }
+
+        //hour
+        int hour = (Mathf.FloorToInt(m_TimePassed / 60f)) % 12;
+        if (hour == 0)
+        {
+            hour += 12;
+        }
+
+        //AM or PM
+        string ampm = "AM";
+        if (((m_TimePassed / 60f) % 24f) > 12f)
+        {
+            ampm = "PM";
+        }
+
+        //output time
+        if (hour == 7)
+        {
+            gameEnding.CaughtPlayer();
+        }
+        else
+        {
+            timeText.text = hour.ToString() + ":" + minString + ampm;
+        }
+
+    }
     private void OnAnimatorMove()
     {
         m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
@@ -85,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
             if(soulsLeft == 0)
             {
                 //activate the end of the game
-                ending.SetActive(true);
+                exit.SetActive(true);
                 gargoyle3.SetActive(true);
             }
             else if (soulsLeft == 1)

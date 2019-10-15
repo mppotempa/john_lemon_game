@@ -62,18 +62,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Exit.cs" />
     <Compile Include="Assets\Scripts\GameEnding.cs" />
     <Compile Include="Assets\Scripts\LightFlicker.cs" />
     <Compile Include="Assets\Scripts\Observer.cs" />
     <Compile Include="Assets\Scripts\Outliner.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\WaypointPatrol.cs" />
-    <Compile Include="Assets\test.cs" />
-    <Compile Include="Assets\testv2.cs" />
-    <Compile Include="Assets\testv4.cs" />
-    <Compile Include="Assets\testv5.cs" />
-    <Compile Include="Assets\testv6.cs" />
-    <Compile Include="Assets\textv3.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <None Include="Assets\Shaders\SpookyStandardShader.shader" />
     <None Include="Assets\Shaders\PlaneFog.shader" />

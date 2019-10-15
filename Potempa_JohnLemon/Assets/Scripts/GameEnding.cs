@@ -9,21 +9,20 @@ public class GameEnding : MonoBehaviour
     public float fadeDuration = 1f;
     public float displayImageDuration = 1f;
 
-    public GameObject player;
+    
     public CanvasGroup exitBackgroundImageCanvasGroup;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public AudioSource exitAudio;
     public AudioSource caughtAudio;
-    public Text timeText;
 
     float m_Timer;
-    float m_TimePassed;
     bool m_HasAudioPlayed;
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
 
     private void Update()
     {
+       
         if (m_IsPlayerAtExit)
         {
             EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio);
@@ -32,52 +31,6 @@ public class GameEnding : MonoBehaviour
         {
             EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
         }
-        else
-        {
-            //display time
-            m_TimePassed += Time.deltaTime;
-
-            //min
-            int min = Mathf.FloorToInt(m_TimePassed % 60f);
-            string minString = min.ToString();
-            if (min < 10)
-            {
-                minString = "0" + minString;
-
-            }
-
-            //hour
-            int hour = (Mathf.FloorToInt(m_TimePassed / 60f)) % 12;
-            if(hour == 0)
-            {
-                hour += 12;
-            }
-
-            //AM or PM
-            string ampm = "AM";
-            if(((m_TimePassed/60f) %  24f) > 12f)
-            {
-                ampm = "PM";
-            }
-
-            //output time
-            if (hour == 7)
-            {
-                CaughtPlayer();
-            }
-            else
-            {
-                timeText.text = hour.ToString() + ":" + minString + ampm;
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == player)
-        {
-            m_IsPlayerAtExit = true;
-        }
     }
 
     public void CaughtPlayer()
@@ -85,7 +38,7 @@ public class GameEnding : MonoBehaviour
         m_IsPlayerCaught = true;
     }
 
-    void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart, AudioSource audioSource)
+    public void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart, AudioSource audioSource)
     {
         if (!m_HasAudioPlayed)
         {
@@ -106,5 +59,9 @@ public class GameEnding : MonoBehaviour
                 Application.Quit();
             }
         }
+    }
+    public void isAtExit()
+    {
+        m_IsPlayerAtExit = true;
     }
 }
