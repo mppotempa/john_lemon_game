@@ -205,6 +205,7 @@ MonoBehaviour:
   caughtBackgroundImageCanvasGroup: {fileID: 1774806652}
   exitAudio: {fileID: 1446993361}
   caughtAudio: {fileID: 530839911}
+  timeText: {fileID: 1156150053}
 --- !u!1 &103059505
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +266,12 @@ Transform:
   m_Father: {fileID: 1886852390}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &208268051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8843886180661722541, guid: ab6792477eb90d543baeeb21a49de4d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 8843886180540956487}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &256260688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3870,7 +3877,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6befc2c895398db419a857acb9b342dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 208268051}
+  gameEnding: {fileID: 76461061}
 --- !u!65 &410036811
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5159,7 +5167,7 @@ PrefabInstance:
     - target: {fileID: 7797174378783356193, guid: ff5fa99df9fd08d42ab1af14bd651297,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.046616
+      value: 5.73
       objectReference: {fileID: 0}
     - target: {fileID: 7797174378783356193, guid: ff5fa99df9fd08d42ab1af14bd651297,
         type: 3}
@@ -5169,7 +5177,7 @@ PrefabInstance:
     - target: {fileID: 7797174378783356193, guid: ff5fa99df9fd08d42ab1af14bd651297,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.4374914
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 7797174378783356193, guid: ff5fa99df9fd08d42ab1af14bd651297,
         type: 3}
@@ -7045,7 +7053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1993096778
 MonoBehaviour:
   m_ObjectHideFlags: 0

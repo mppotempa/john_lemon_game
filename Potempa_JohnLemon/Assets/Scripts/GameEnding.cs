@@ -14,8 +14,10 @@ public class GameEnding : MonoBehaviour
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public AudioSource exitAudio;
     public AudioSource caughtAudio;
+    public Text timeText;
 
     float m_Timer;
+    float m_TimePassed;
     bool m_HasAudioPlayed;
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
@@ -30,6 +32,44 @@ public class GameEnding : MonoBehaviour
         else if (m_IsPlayerCaught)
         {
             EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
+        }
+        else
+        {
+            //display time
+            m_TimePassed += Time.deltaTime;
+
+            //min
+            int min = Mathf.FloorToInt(m_TimePassed % 60f);
+            string minString = min.ToString();
+            if (min < 10)
+            {
+                minString = "0" + minString;
+
+            }
+
+            //hour
+            int hour = (Mathf.FloorToInt(m_TimePassed / 60f)) % 12;
+            if (hour == 0)
+            {
+                hour += 12;
+            }
+
+            //AM or PM
+            string ampm = "AM";
+            if (((m_TimePassed / 60f) % 24f) > 12f)
+            {
+                ampm = "PM";
+            }
+
+            //output time
+            if (hour == 7)
+            {
+                CaughtPlayer();
+            }
+            else
+            {
+                timeText.text = hour.ToString() + ":" + minString + ampm;
+            }
         }
     }
 
@@ -60,7 +100,8 @@ public class GameEnding : MonoBehaviour
             }
         }
     }
-    public void isAtExit()
+    //create setter for ending
+    public void IsAtExit()
     {
         m_IsPlayerAtExit = true;
     }

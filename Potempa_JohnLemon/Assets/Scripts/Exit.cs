@@ -7,13 +7,15 @@ public class Exit : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
 
-    GameEnding gameEnding;
+    public GameEnding gameEnding;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
         {
-            gameEnding.isAtExit();
+            print("Reached Exit");
+            gameEnding.IsAtExit();
+            print("Done");
         }
     }
 }
