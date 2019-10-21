@@ -7,9 +7,11 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
+    private int totalSoul = 13;
     private int soulsLeft = 13;
-    public Text leftText;
+    public Text escapeWarning;
     public GameObject exit;
+    public Slider soulBar;
 
     Vector3 m_Movement;
     Animator m_Animator;
@@ -33,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_AudioSource = GetComponent<AudioSource>();
-        setLeftText();
+        soulBar.value = 0;
     }
 
     // Update is called once per frame
@@ -81,14 +83,19 @@ public class PlayerMovement : MonoBehaviour
             //hide the soul bit
             other.gameObject.SetActive(false);
             soulsLeft--;
-            setLeftText();
+            Debug.Log(soulsLeft);
+            soulBar.value = totalSoul - soulsLeft;
+            Debug.Log(soulBar.value);
+
+            ;
             //check to see what to activate
 
-            if(soulsLeft == 0)
+            if(soulsLeft == 11)
             {
                 //activate the end of the game
                 exit.SetActive(true);
                 gargoyle3.SetActive(true);
+                escapeWarning.text = "Make it back to the starting point to escape!";
             }
             else if (soulsLeft == 1)
             {
@@ -116,18 +123,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-    }
-
-    void setLeftText()
-    {
-        if(soulsLeft > 0)
-        {
-            leftText.text = "Souls left: " + soulsLeft.ToString();
-        }
-        else
-        {
-            leftText.text = "Make it back to the starting point to escape!";
-        }
     }
 }
 
