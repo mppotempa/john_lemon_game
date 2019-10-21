@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_AudioSource = GetComponent<AudioSource>();
+        //set the soul bar to 0
         soulBar.value = 0;
     }
 
@@ -83,14 +84,13 @@ public class PlayerMovement : MonoBehaviour
             //hide the soul bit
             other.gameObject.SetActive(false);
             soulsLeft--;
-            Debug.Log(soulsLeft);
+            //update the soul bar
             soulBar.value = totalSoul - soulsLeft;
-            Debug.Log(soulBar.value);
 
             ;
             //check to see what to activate
 
-            if(soulsLeft == 11)
+            if(soulsLeft == 0)
             {
                 //activate the end of the game
                 exit.SetActive(true);
