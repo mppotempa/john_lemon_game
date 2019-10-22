@@ -90,12 +90,12 @@ public class PlayerMovement : MonoBehaviour
             ;
             //check to see what to activate
 
-            if(soulsLeft == 11)
+            if(soulsLeft == 0)
             {
                 //activate the end of the game
                 exit.SetActive(true);
                 gargoyle3.SetActive(true);
-                escapeWarning.text = "Make it back to the starting point to escape!";
+                escapeWarning.text = "Make it back to the exit to escape!";
             }
             else if (soulsLeft == 1)
             {
