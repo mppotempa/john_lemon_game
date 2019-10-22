@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
             ;
             //check to see what to activate
 
-            if(soulsLeft == 0)
+            if(soulsLeft == 11)
             {
                 //activate the end of the game
                 exit.SetActive(true);
