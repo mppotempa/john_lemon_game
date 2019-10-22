@@ -62,7 +62,7 @@ public class GameEnding : MonoBehaviour
             }
 
             //output time
-            if (hour == 7)
+            if (hour == 6)
             {
                 CaughtPlayer();
             }
